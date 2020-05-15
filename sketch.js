@@ -15,22 +15,18 @@ function setup() {
 	engine = Engine.create();
 	world = engine.world;
 
-	paper = new Paper(300,300,30);
+	paper = new Paper(400,400);
 ground = new Ground(650,470,1300,40);
-  line1 = new Dustbin(1165,450,190,20);
-  line2 = new Dustbin(1065,410,20,100);
-  line3 = new  Dustbin(1250,410,20,100);
+  line1 = new Dustbin(1165,450);
 }
 
 
 function draw() {
-  background(0);
+  background("silver");
   Engine.update(engine);
 paper.display();
  ground.display();
  line1.display();
- line2.display();
- line3.display();
  keyPressed();
 }
 function keyPressed(){
