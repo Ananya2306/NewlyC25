@@ -9,32 +9,35 @@ function preload()
 }
 
 function setup() {
-	createCanvas(1300,500);
+var canvas = createCanvas(1300,500);
 
+engine = Engine.create();
+world = engine.world;
 
-	engine = Engine.create();
-	world = engine.world;
-
-	paper = new Paper(50,50,20);
+paper = new Paper(200,100,20);
 ground = new Ground(650,470,1300,40);
- dustbin = new Dustbin(1175,350,250,200);
-
+dustbin = new Dustbin(1175,350,250,200);
+line1 = new Line(1050,350,20,200);
+line2 = new Line(1300,350,20,200);
+line3 = new Line(1165,440,250,20);
 }
 
 
 function draw() {
   background("silver");
   Engine.update(engine);
-paper.display();
+line1.display();
+line2.display();
+line3.display();
+ paper.display();
  ground.display();
  dustbin.display();
-
  keyPressed();
 }
 
 function keyPressed(){
 	if(keyCode === UP_ARROW){
-		Matter.Body.applyForce(paper.body,paper.body.position,{x :2,y :-3});
+		Matter.Body.applyForce(paper.body,paper.body.position,{x : 2,y : -2});
 	}
 }
 
