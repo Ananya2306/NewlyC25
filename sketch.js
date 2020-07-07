@@ -14,7 +14,7 @@ var canvas = createCanvas(1300,500);
 engine = Engine.create();
 world = engine.world;
 
-paper = new Paper(300,100,20);
+paper = new Paper(400,100,20);
 ground = new Ground(650,470,1300,40);
 dustbin = new Dustbin(1175,350,250,200);
 line1 = new Line(1050,350,20,200);
